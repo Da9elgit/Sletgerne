@@ -1,0 +1,50 @@
+﻿@page
+@model DbAddMigration.Pages.myScaffold.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Bil</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Bil.Id" />
+            <div class="form-group">
+                <label asp-for="Bil.Navn" class="control-label"></label>
+                <input asp-for="Bil.Navn" class="form-control" />
+                <span asp-validation-for="Bil.Navn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bil.Efternavn" class="control-label"></label>
+                <input asp-for="Bil.Efternavn" class="form-control" />
+                <span asp-validation-for="Bil.Efternavn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bil.Alder" class="control-label"></label>
+                <input asp-for="Bil.Alder" class="form-control" />
+                <span asp-validation-for="Bil.Alder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bil.By" class="control-label"></label>
+                <input asp-for="Bil.By" class="form-control" />
+                <span asp-validation-for="Bil.By" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
